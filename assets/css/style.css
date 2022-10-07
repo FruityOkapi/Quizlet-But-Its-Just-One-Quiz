@@ -76,9 +76,25 @@ nav .container {
 .options {
     background-color: var(--sky-blue-crayola);
     border: solid 1px var(--sky-blue-crayola);
-    border-radius: 35px;
+    border-radius: 5px;
+    padding: 0px 5px;
+    font-size: large;
+    margin: 10px 0 3px 30px;
+}
+
+.options:hover {
+    background-color: var(--celeste);
+    border-color: var(--celeste);
+}
+
+li button {
+    cursor: pointer;
 }
 
 .ul-inline {
     display: inline;
+}
+
+.ta-c {
+    text-align: center;
 }
