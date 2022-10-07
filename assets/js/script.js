@@ -11,6 +11,7 @@ var ctext = $('#ctext');
 var YoN = $('#validate');
 var startQ = $('#startQ');
 var clear = $('#clear');
+var submit = $('#submit');
 
 // This is to make an array for the 10 questions to be grabbed later
 var qs = [
@@ -48,6 +49,7 @@ var a8 = ['A. 2018', 'B. 2015', 'C. 2016', 'D. 2017']
 
 var a9 = ['A. Silvy', 'B. Shelly', 'C. Shuckle','D. Shirley', "E. Trick question it's B and D cause there are 2 heralds"]
 
+// This var helps us stop the timer when the test is done
 var done = false;
 
 function dispStart() {
@@ -87,7 +89,7 @@ function startTimer() {
         } else {
             timerEl.text('Time left: '+ timer);
             clearInterval(timeInterval);
-            leaderboards();
+            quizOver();
         }
     }, 1000);
     
@@ -437,11 +439,20 @@ function question10() {
                 opt.remove();
                 title.remove();
                 done = true;
-                leaderboards();
+                quizOver();
             })
         } else {
             selections.click(function () {
-                temp();
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
             })
         }
         quizA.append(selections);
@@ -449,23 +460,15 @@ function question10() {
 
 }
 
-if (timer === 0) {
-    leaderboards()
-}
-
-function leaderboards() {
+function quizOver() {
     var opt = $('.optionsQ')
     opt.remove();
     quizQ.text('Quiz Over!');
-
+    var subm = $('')
 }
 
-function gameOver() {
-    console.log('You Lived')
-}
-
-function temp () {
-    console.log('U died :c')
+function leaderboards() {
+    quizCard.removeClass('qCard');
 }
 
 // This is to make sure the page displays the startup page
