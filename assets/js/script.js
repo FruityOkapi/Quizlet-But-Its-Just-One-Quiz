@@ -48,7 +48,7 @@ var a8 = ['A. 2018', 'B. 2015', 'C. 2016', 'D. 2017']
 
 var a9 = ['A. Silvy', 'B. Shelly', 'C. Shuckle','D. Shirley', "E. Trick question it's B and D cause there are 2 heralds"]
 
-
+var done = false;
 
 function dispStart() {
     // This will set the styling of the quiz.
@@ -78,19 +78,51 @@ function startTimer() {
     timer = 100;
     timerEl.text('Time left: '+ timer);
     var timeInterval = setInterval(function () {
-        if (timer > 1) {
+        if (timer > 1 && done === false) {
             timer--;
             timerEl.text('Time left: '+ timer);
-        } else if (timer === 1){
+        } else if (timer === 1 && done === false){
             timer--;
             timerEl.text('Time left: '+ timer);
         } else {
             timerEl.text('Time left: '+ timer);
             clearInterval(timeInterval);
-            gameOver();
+            leaderboards();
         }
     }, 1000);
     
+}
+
+function validateYes() {
+    var shortTime = 1;    
+    YoN.addClass('vali');
+    YoN.text('Correct!');
+    var timeInterval = setInterval(function () {
+        if (shortTime > 0) {
+            YoN.text('Correct!');
+            shortTime--;
+        } else {
+            YoN.text('');
+            YoN.removeClass('vali');
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+}
+
+function validateNo() {
+    var shortTime = 1;
+    YoN.addClass('vali');
+    YoN.text('Nope!');
+    var timeInterval = setInterval(function () {
+        if (shortTime > 0) {
+            YoN.text('Nope!');
+            shortTime--;
+        } else {
+            YoN.removeClass('vali');
+            YoN.text('');
+            clearInterval(timeInterval);
+        }
+    }, 1000);
 }
 
 function startQuiz() {
@@ -105,10 +137,21 @@ function startQuiz() {
             selections.click(function () {
                 var opt = $('.optionsQ')
                 opt.remove();
+                validateYes();
                 question2();
             })
         } else {
             selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
                 temp();
             })
         }
@@ -126,7 +169,275 @@ function question2() {
         if (i === 5) {
             selections.click(function () {
                 var opt = $('.optionsQ')
-                gameOver();
+                opt.remove();
+                validateYes();
+                question3();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question3() {
+    quizQ.text(qs[2])
+    for (var i = 0; i < a2.length; i++) {
+        var selections = $('<button>');
+        selections.text(a2[i]);
+        selections.addClass('optionsQ');
+        if (i === 2) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question4();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question4() {
+    quizQ.text(qs[3])
+    for (var i = 0; i < a3.length; i++) {
+        var selections = $('<button>');
+        selections.text(a3[i]);
+        selections.addClass('optionsQ');
+        if (i === 0) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question5();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question5() {
+    quizQ.text(qs[4])
+    for (var i = 0; i < a4.length; i++) {
+        var selections = $('<button>');
+        selections.text(a4[i]);
+        selections.addClass('optionsQ');
+        if (i === 3) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question6();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question6() {
+    quizQ.text(qs[5])
+    for (var i = 0; i < a5.length; i++) {
+        var selections = $('<button>');
+        selections.text(a5[i]);
+        selections.addClass('optionsQ');
+        if (i === 1) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question7();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question7() {
+    quizQ.text(qs[6])
+    for (var i = 0; i < a6.length; i++) {
+        var selections = $('<button>');
+        selections.text(a6[i]);
+        selections.addClass('optionsQ');
+        if (i === 3) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question8();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question8() {
+    quizQ.text(qs[7])
+    for (var i = 0; i < a7.length; i++) {
+        var selections = $('<button>');
+        selections.text(a7[i]);
+        selections.addClass('optionsQ');
+        if (i === 2) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question9();
+            })
+        } else {
+            selections.click(function () {
+                
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question9() {
+    quizQ.text(qs[8])
+    for (var i = 0; i < a8.length; i++) {
+        var selections = $('<button>');
+        selections.text(a8[i]);
+        selections.addClass('optionsQ');
+        if (i === 2) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                validateYes();
+                question10();
+            })
+        } else {
+            selections.click(function () {
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                timer--;
+                validateNo();
+                timerEl.text('Time left: '+ timer);
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
+
+}
+
+function question10() {
+    quizQ.text(qs[9])
+    for (var i = 0; i < a9.length; i++) {
+        var selections = $('<button>');
+        selections.text(a9[i]);
+        selections.addClass('optionsQ');
+        if (i === 4) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                title.remove();
+                done = true;
+                leaderboards();
             })
         } else {
             selections.click(function () {
@@ -137,6 +448,18 @@ function question2() {
     }
 
 }
+
+if (timer === 0) {
+    leaderboards()
+}
+
+function leaderboards() {
+    var opt = $('.optionsQ')
+    opt.remove();
+    quizQ.text('Quiz Over!');
+
+}
+
 function gameOver() {
     console.log('You Lived')
 }

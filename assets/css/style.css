@@ -99,8 +99,10 @@ li button, ol button {
     display: inline;
 }
 
-.ta-c {
-    text-align: center;
+
+.vali {
+    border-top: solid 3px var(--piggy-pink);
+    margin: 0 30px; 
 }
 
 #startQ {
