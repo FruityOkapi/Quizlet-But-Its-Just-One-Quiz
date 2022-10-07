@@ -20,11 +20,12 @@ body {
     background-color: var(--mint-cream);
 }
 
-a {
-    text-decoration: none;
-    color: var(--mr-grey);
-    display: flex;
-    align-items: center;
+h2 {
+    font-size: large;
+}
+
+ul {
+    list-style: none;
 }
 
 nav {
@@ -45,6 +46,14 @@ nav .container {
     height: 50px;
 }
 
+/* This is to remove the button styling */
+.navbar .container button {
+	background: none;
+	border: none;
+	cursor: pointer;
+    font-size: large;
+}
+
 .qCard {
     margin-top: 50px;
     min-height: 400px;
@@ -62,4 +71,14 @@ nav .container {
 .content {
     padding: 5px 30px 10px 30px;
     text-align: center;
+}
+
+.options {
+    background-color: var(--sky-blue-crayola);
+    border: solid 1px var(--sky-blue-crayola);
+    border-radius: 35px;
+}
+
+.ul-inline {
+    display: inline;
 }
