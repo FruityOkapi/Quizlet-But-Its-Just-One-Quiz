@@ -47,15 +47,8 @@ var a7 = ['A. Zedd', 'B. Against the Current', 'C. Imagine Dragons', 'D. Nicki T
 var a8 = ['A. 2018', 'B. 2015', 'C. 2016', 'D. 2017']
 
 var a9 = ['A. Silvy', 'B. Shelly', 'C. Shuckle','D. Shirley', "E. Trick question it's B and D cause there are 2 heralds"]
-function startTimer() {
 
-}
-function startQuiz() {
-    startQ.text('')
 
-    quizQ.text(qs[0])
-
-}
 
 function dispStart() {
     // This will set the styling of the quiz.
@@ -77,14 +70,80 @@ function dispStart() {
     startQ.append(startButton);
     startQ.click(function() {
         startQuiz()
+        startTimer()
     });
 }
 
-dispStart()
+function startTimer() {
+    timer = 100;
+    timerEl.text('Time left: '+ timer);
+    var timeInterval = setInterval(function () {
+        if (timer > 1) {
+            timer--;
+            timerEl.text('Time left: '+ timer);
+        } else if (timer === 1){
+            timer--;
+            timerEl.text('Time left: '+ timer);
+        } else {
+            timerEl.text('Time left: '+ timer);
+            clearInterval(timeInterval);
+            gameOver();
+        }
+    }, 1000);
+    
+}
 
+function startQuiz() {
+    startQ.text('');
+    ctext.text('');
+    quizQ.text(qs[0])
+    for (var i = 0; i < a0.length; i++) {
+        var selections = $('<button>');
+        selections.text(a0[i]);
+        selections.addClass('optionsQ');
+        if (i === 0) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                opt.remove();
+                question2();
+            })
+        } else {
+            selections.click(function () {
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
 
+}
 
+function question2() {
+    quizQ.text(qs[1])
+    for (var i = 0; i < a1.length; i++) {
+        var selections = $('<button>');
+        selections.text(a1[i]);
+        selections.addClass('optionsQ');
+        if (i === 5) {
+            selections.click(function () {
+                var opt = $('.optionsQ')
+                gameOver();
+            })
+        } else {
+            selections.click(function () {
+                temp();
+            })
+        }
+        quizA.append(selections);
+    }
 
+}
+function gameOver() {
+    console.log('You Lived')
+}
+
+function temp () {
+    console.log('U died :c')
+}
 
 // This is to make sure the page displays the startup page
-
+dispStart()

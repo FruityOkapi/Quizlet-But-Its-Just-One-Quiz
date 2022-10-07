@@ -24,7 +24,7 @@ h2 {
     font-size: large;
 }
 
-ul {
+ul, ol {
     list-style: none;
 }
 
@@ -34,7 +34,7 @@ nav {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 30px;
 }
@@ -56,7 +56,6 @@ nav .container {
 
 .qCard {
     margin-top: 50px;
-    min-height: 400px;
     background-color: white;
     border: solid 1px white; 
     border-radius: 35px;
@@ -73,21 +72,26 @@ nav .container {
     text-align: center;
 }
 
-.options {
+.options, .optionsQ {
     background-color: var(--sky-blue-crayola);
     border: solid 1px var(--sky-blue-crayola);
     border-radius: 5px;
     padding: 0px 5px;
     font-size: large;
-    margin: 10px 0 3px 30px;
+    margin: 10px 30px;
 }
 
-.options:hover {
+.options:hover, .optionsQ:hover {
     background-color: var(--celeste);
     border-color: var(--celeste);
 }
 
-li button {
+ol .options, ol .optionsQ {
+    display: flex;
+    flex-direction: column;
+}
+
+li button, ol button {
     cursor: pointer;
 }
 
@@ -96,5 +100,9 @@ li button {
 }
 
 .ta-c {
+    text-align: center;
+}
+
+#startQ {
     text-align: center;
 }
