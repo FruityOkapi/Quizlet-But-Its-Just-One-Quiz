@@ -1,0 +1,65 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+Colors from this palette https://coolors.co/palette/7bdff2-b2f7ef-eff7f6-f7d6e0
+*/
+:root{
+--sky-blue-crayola: #7bdff2ff;
+--celeste: #b2f7efff;
+--mint-cream: #EFF7F6;
+--piggy-pink: #f7d6e0ff;    
+--mr-grey: #495057;
+}
+
+body {
+    background-color: var(--mint-cream);
+}
+
+a {
+    text-decoration: none;
+    color: var(--mr-grey);
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    background-color: var(--piggy-pink);
+    height: 50px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.qCard {
+    margin-top: 50px;
+    min-height: 400px;
+    background-color: white;
+    border: solid 1px white; 
+    border-radius: 35px;
+    box-shadow: 12px 12px 20px var(--piggy-pink);
+}
+
+.title {
+    text-align: center;
+    padding: 10px 40px 5px 40px;
+}
+
+.content {
+    padding: 5px 30px 10px 30px;
+    text-align: center;
+}
