@@ -49,8 +49,6 @@ var stop = false;
 
 // This function sets the start page when ran.
 function dispStart() {
-    retry.text('');
-    clear.text('');
     // This will set the styling of the quiz.
     quizCard.attr('class', 'qCard');
     // This will set the text of the initial start of the quiz
@@ -555,7 +553,7 @@ function leaderboards() {
 // This is to make sure the page displays the startup page and retrieves the array from local storage. If the array doesnt exist it will make it accessible.
 dispStart();
 var listcheck = localStorage.getItem('scores');
-console.log(listcheck);
+// This sets the localStorage item scores if it doesn't exist already.
 if (listcheck === null) {
     localStorage.setItem('scores', JSON.stringify(scores));
 }
