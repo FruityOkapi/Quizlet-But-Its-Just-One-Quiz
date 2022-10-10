@@ -471,12 +471,7 @@ function quizOver() {
     // This sets the event to not do anything when nothing is entered or if something is entered, make it part of the scores array and stores it in the localStorage as a JSON stringified array.
     addForm.submit(function(event) {
         if (tInput.val() !== "") {
-            // This sets the var currentScore to a string of whatever they typed + their score with a tildee in the middle. why is this not working on live site.
-            var currentScore = tInput.val() + ' ~ ' + timer;
-            // This appends the string to the array
-            scores.push(currentScore);
-            // This stores it
-            localStorage.setItem('scores', JSON.stringify(scores));
+            setScore();
             // This retrieves the new list
             getScore();
             // This loads the leaderboards
@@ -489,6 +484,15 @@ function quizOver() {
     addForm.append(tInput);
     addForm.append(submitButton);
 
+}
+
+function setScore() {
+    // This sets the var currentScore to a string of whatever they typed + their score with a tildee in the middle. why is this not working on live site.
+    var currentScore = tInput.val() + ' ~ ' + timer;
+    // This appends the string to the array
+    scores.push(currentScore);
+    // This stores it
+    localStorage.setItem('scores', JSON.stringify(scores));
 }
 
 // This makes the scores array up to date by retrieving the localStorage array and parsing it and making scores the updated array.
