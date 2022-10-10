@@ -94,7 +94,6 @@ function startTimer() {
             quizOver();
             return;
         } else if (stop === true) {
-            console.log('working');
             clearInterval(timeInterval);
             return;
         }
@@ -473,8 +472,6 @@ function quizOver() {
                 getScore();
                 // This sets the var currentScore to a string of whatever they typed + their score with a tildee in the middle. why is this not working on live site.
                 var currentScore = tInput.val() + ' ~ ' + timer;
-                console.log(currentScore)
-                console.log(tInput.val())
                 // This appends the string to the array
                 scores.push(currentScore);
                 // This stores it
@@ -486,7 +483,6 @@ function quizOver() {
         } else {
             // If nothing is entered when submit is clicked or enter is pressed it will do nothing
             event.preventDefault();
-            console.log('This works');
         }
     })
     addForm.append(tInput);
@@ -505,7 +501,7 @@ function getScore() {
 // This clears the array on the localStorage
 function clearScore() {
     scores = [];
-    localStorage.setItem('score', JSON.stringify(scores));
+    localStorage.setItem('scores', JSON.stringify(scores));
 }
 
 // This renders the leaderboards
