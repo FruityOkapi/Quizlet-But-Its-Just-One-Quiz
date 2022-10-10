@@ -1,3 +1,4 @@
+/* Universal styling */
 * {
     font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
@@ -8,6 +9,7 @@
 /* 
 Colors from this palette https://coolors.co/palette/7bdff2-b2f7ef-eff7f6-f7d6e0
 */
+/* This section makes custom colors available for reference without copy and pasting values */
 :root{
 --sky-blue-crayola: #7bdff2ff;
 --celeste: #b2f7efff;
@@ -54,6 +56,7 @@ nav .container {
     font-size: large;
 }
 
+/* This sets the quiz card background */
 .qCard {
     margin-top: 50px;
     background-color: white;
@@ -62,16 +65,19 @@ nav .container {
     box-shadow: 12px 12px 20px var(--piggy-pink);
 }
 
+/* To make the title be in center */
 .title {
     text-align: center;
     padding: 10px 40px 5px 40px;
 }
 
+/* For the Start Page blurb under the title */
 .content {
     padding: 5px 30px 10px 30px;
     text-align: center;
 }
 
+/* For the option buttons */
 .options, .optionsQ {
     background-color: var(--sky-blue-crayola);
     border: solid 1px var(--sky-blue-crayola);
@@ -81,30 +87,72 @@ nav .container {
     margin: 10px 30px;
 }
 
+/* To make them lighter when mouse hovers over the button */
 .options:hover, .optionsQ:hover {
     background-color: var(--celeste);
     border-color: var(--celeste);
 }
 
+/* This only applies to the options and optionsQ in an ordered list */
 ol .options, ol .optionsQ {
     display: flex;
     flex-direction: column;
 }
 
+/* Applies to buttons in those areas */
 li button, ol button {
     cursor: pointer;
 }
 
+/* This was to make the buttons at the leaderboards page side by side. */
 .ul-inline {
-    display: inline;
+    display: inline-flex;
 }
 
-
+/* Specifically for the Correct and Nope animations */
 .vali {
     border-top: solid 3px var(--piggy-pink);
     margin: 0 30px; 
 }
 
+/* For the scores */
+.leaderb {
+    background-color: var(--sky-blue-crayola);
+    border-bottom: solid 1px var(--mr-grey);
+    padding: 0px 5px;
+    font-size: large;
+    margin: 0 auto; 
+}
+
+/* For the buttons */
+.submit {
+    border-radius: 6px;
+    padding: 5px 6px;
+}
+
+/* For first button with this class only */
+.submit:nth-of-type(1) {
+    margin: 0 0 20px 30px;
+    border-color: var(--mint-cream);
+}
+
+/* For second button with this class only */
+.submit:nth-of-type(2) {
+    background-color: var(--piggy-pink);
+    border-color: var(--piggy-pink);
+}
+
+/* For second button with this class only but when you hover over it */
+.submit:nth-of-type(2):hover {
+    cursor: pointer;
+}
+
+/* for font size */
+.timer {
+    font-size: large;
+}
+
+/* For the startQ id */
 #startQ {
     text-align: center;
 }
