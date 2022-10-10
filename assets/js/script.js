@@ -484,6 +484,7 @@ function quizOver() {
         } else {
             // If nothing is entered when submit is clicked or enter is pressed it will do nothing
             event.preventDefault();
+            console.log('This works');
         }
     })
     addForm.append(tInput);
