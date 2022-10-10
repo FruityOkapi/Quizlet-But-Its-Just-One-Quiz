@@ -473,6 +473,7 @@ function quizOver() {
             if (tInput.val() !== "") {
                 // This sets the var currentScore to a string of whatever they typed + their score with a tildee in the middle. why is this not working on live site.
                 var currentScore = tInput.val() + ' ~ ' + timer;
+                console.log(tInput.val())
                 // This appends the string to the array
                 scores.push(currentScore);
                 // This stores it
