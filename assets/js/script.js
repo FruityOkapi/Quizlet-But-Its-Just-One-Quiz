@@ -16,7 +16,7 @@ var submit = $('#submit');
 var retry = $('#retry');
 
 // This array is for the scores
-var scores = ['Scores!'];
+var scores = [];
 
 // This is to make an array for the 10 questions to be grabbed later
 var qs = ['When did Riot rework how items work?', 'Version 9.3 of the item Infinity Edge converted 10% of crits into true damage. When this was changed, along with multiple other marksman items, what class of champions temporarily replaced marksmen in the ADC role?', 'How many full reworks has the champion Ryze received over the years?', 'In patch 8.21, Irelia was nerfed in what way that caused the community to be upset with Riot?', 'What champion lost their main identifier in a rework that the community did not want as launch approached?', 'Which champion had the most controversial release?', "Out of these options, what was Riot's first IP to have mainstream attention?", "Which band produced multiple songs for the creative developers of the 2014 Worlds music video and 2021's Arcane.", 'What year did Riot add elemental dragons?', "What is Rift Herald's name?"];
@@ -552,5 +552,10 @@ function leaderboards() {
     })
 }
 
-// This is to make sure the page displays the startup page and retrieves the array from local storage.
+// This is to make sure the page displays the startup page and retrieves the array from local storage. If the array doesnt exist it will make it accessible.
 dispStart();
+var listcheck = localStorage.getItem('scores');
+console.log(listcheck);
+if (listcheck === null) {
+    localStorage.setItem('scores', JSON.stringify(scores));
+}
